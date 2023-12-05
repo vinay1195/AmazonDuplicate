@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon Test Suite" verbose="4" thread-count="3" parallel="tests">
+
+	<listeners>
+		</listeners>
+	<test name="Amazon Page Test">
+
+		<classes>
+			<class name="com.qa.Amazon.tests.LoginEmailpageTest" />
+		</classes>
+	</test>
+
+	 <!--<test name="Amazon LoginPassword Page Test">
+		<classes>
+			<class name="com.qa.Amazon.tests.LoginPasswordpageTest" />
+		</classes>
+	</test>-->
+
+	<!-- <test name="Amazon productinfo Test">
+		<classes>
+			<class name="com.qa.Amazon.tests.productinfopageTest" />
+		</classes>
+	</test> -->
+
+
+	<!-- <test name="Open Cart Registration Page Test"> <classes> <class name="com.qa.opencart.tests.RegistrationPageTest" 
+		/> </classes> </test> -->
+
+</suite>
