@@ -1,5 +1,7 @@
 package com.qa.Amazon.pages;
 
-public class orderpage {
+public class orderpage
+{
+//	,ckwmvlwm
 
 }
