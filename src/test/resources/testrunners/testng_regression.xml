@@ -4,7 +4,8 @@
 <suite name="Amazon Test Suite" verbose="4" thread-count="3" parallel="tests">
 
 	<listeners>
-		</listeners>
+		<listener class-name="com.qa.Amazon.listeners.ExtentReportListener" />
+	</listeners>
 	<test name="Amazon Page Test">
 
 		<classes>
@@ -12,17 +13,17 @@
 		</classes>
 	</test>
 
-	 <!--<test name="Amazon LoginPassword Page Test">
+	 <test name="Amazon LoginPassword Page Test">
 		<classes>
 			<class name="com.qa.Amazon.tests.LoginPasswordpageTest" />
 		</classes>
-	</test>-->
+	</test>
 
-	<!-- <test name="Amazon productinfo Test">
+	 <test name="Amazon productinfo Test">
 		<classes>
 			<class name="com.qa.Amazon.tests.productinfopageTest" />
 		</classes>
-	</test> -->
+	</test> 
 
 
 	<!-- <test name="Open Cart Registration Page Test"> <classes> <class name="com.qa.opencart.tests.RegistrationPageTest" 

@@ -1,10 +1,14 @@
 package com.qa.Amazon.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,8 +36,8 @@ public class DriverFactory
 			ChromeOptions co = new ChromeOptions();
 			co.setBinary("C:\\Users\\vinay\\Downloads\\down\\chrome-win64\\chrome.exe");
 			ChromeDriver dr = new ChromeDriver(co);
-			//driver = new ChromeDriver(co);
-			tldriver.set(new ChromeDriver(OptionsManager.getchromeOptions()));
+			driver = new ChromeDriver(co);
+			//tldriver.set(new ChromeDriver(OptionsManager.getchromeOptions()));
 			
 		}
 		else if (browsername.equalsIgnoreCase("Firefox"))
@@ -55,10 +59,14 @@ public class DriverFactory
 		 driver.manage().window().maximize();
 		return driver;
 	}
+	public static synchronized WebDriver getDriver() {
+		return tldriver.get();
+	}
+
 	public Properties init_prop() {
 		prop=new Properties();
 		try {
-			FileInputStream fip=new FileInputStream(".\\src\\test\\resource\\config\\config.properties");
+			FileInputStream fip=new FileInputStream(".\\src\\test\\resources\\config\\config.properties");
 			try {
 				prop.load(fip);
 			} catch (IOException e) {
@@ -71,6 +79,17 @@ public class DriverFactory
 		}
 		
 		return prop;
+	}
+	public String getScreenshot() {
+		File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
 	}
 
 }

@@ -17,14 +17,14 @@ public class OptionsManager
 	}
 	public static ChromeOptions getchromeOptions()
 	{
-		if(Boolean.parseBoolean(prop.getProperty("--headless")))
+		if(Boolean.parseBoolean(prop.getProperty("headless")))
 			try {
 				co.addArguments("--headless");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		if(Boolean.parseBoolean(prop.getProperty("--incognito")))
+		if(Boolean.parseBoolean(prop.getProperty("incognito")))
 			try {
 				co.addArguments("--incognito");
 			} catch (Exception e) {
