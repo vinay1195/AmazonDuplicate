@@ -29,6 +29,7 @@ public class DriverFactory
 		
 		System.out.println("browser name is " + browsername);
 		higlight=prop.getProperty("highlight");
+//		 d
 		
 		if (browsername.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",

@@ -14,12 +14,14 @@ public class OptionsManager
 	public OptionsManager(Properties prop)
 	{
 		this.prop=prop;
+//		 d
 	}
 	public static ChromeOptions getchromeOptions()
 	{
 		if(Boolean.parseBoolean(prop.getProperty("headless")))
 			try {
 				co.addArguments("--headless");
+//				 d
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
